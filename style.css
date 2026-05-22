@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+   body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background: radial-gradient(circle at top,
+        #1e3c72,
+        #2a5298,
+        #000000
+    );
+}
+
+header {
+    background: #222;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    background: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url("c:\Users\Admin\Downloads\WhatsApp Image 2026-05-22 at 9.09.20 PM.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero h2 {
+    font-size: 3rem;
+}
+
+.hero p {
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+.hero button {
+    padding: 10px 20px;
+    border: none;
+    background: white;
+    color: #1e3c72;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section {
+    margin: 40px 10%;
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill-card,
+.project-card {
+    transition: 0.3s ease;
+}
+
+.skill-card,
+.project-card {
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+.skill-card:hover,
+.project-card:hover {
+    transform: perspective(1000px) rotateX(10deg) rotateY(-10deg) translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+button {
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+
+button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+
+.hero h2 {
+    animation: pop3d 1.2s ease;
+}
+
+@keyframes pop3d {
+    0% {
+        transform: scale(0.8) rotateX(20deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.hero p {
+    animation: fadeIn 2s ease-in-out;
+}
+#contact {
+    text-align: center;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background: #00c6ff;
+    filter: blur(120px);
+    opacity: 0.4;
+    border-radius: 50%;
+    animation: floatGlow 6s infinite alternate;
+}
+
+body::after {
+    right: 0;
+    bottom: 0;
+    background: #ff00ff;
+}
+}
+@keyframes floatGlow {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-40px);
+    }
+}
